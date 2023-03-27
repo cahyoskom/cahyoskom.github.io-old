@@ -89,4 +89,20 @@
 		// Fungsi untuk menangani event saat memindahkan form
 		function handleMouseMove(event) {
 			var mouseCurrent = { x: event.clientX, y: event.clientY };
-			var popupCurrent = { x: popupStart.x + mouseCurrent.x - mouseStart.x
+			var popupCurrent = { x: popupStart.x + mouseCurrent.x - mouseStart.x, y: popupStart.y + mouseCurrent.y - mouseStart.y };
+		formContainer.style.left = popupCurrent.x + 'px';
+		formContainer.style.top = popupCurrent.y + 'px';
+	}
+
+	// Fungsi untuk menangani event saat melepaskan form
+	function handleMouseUp(event) {
+		document.removeEventListener('mousemove', handleMouseMove);
+		document.removeEventListener('mouseup', handleMouseUp);
+	}
+
+	// Menambahkan event listener ke elemen form-container saat menekan form
+	formContainer.addEventListener('mousedown', handleMouseDown);
+</script>
+
+</body>
+</html>
