@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Profile</title>
+    <title>Profile</title>
     <style>
       * {
         box-sizing: border-box;
@@ -243,8 +243,8 @@
         <h1>R Cahyo Tri Putrantoro</h1>
         <h2>Wordpress Web Developer</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac
-          sapien euismod, bibendum ipsum a, aliquet elit. Duis at nunc elit.
+          WordPress Developer specializing in creating attractive and functional e-commerce websites, company profiles, and landing pages 
+	  for various types of businesses and organizations.
         </p>
         <ul
       <li><strong>Email:</strong> mail.cahyo@gmail.com</li>
@@ -255,15 +255,14 @@
   </div>
 </div>
 
-<button onclick="openForm()" class="trigger">Open Form</button>
 	<div class="form-container">
 		<div class="form-box">
 			<span class="close-btn">&times;</span>
 			<h2>Sign Up</h2>
 			<form>
-				<input type="text" name="name" placeholder="Name" required>
-				<input type="email" name="email" placeholder="Email" required>
-				<button class="submit-btn" type="submit">Sign Up</button>
+				<input id="name" type="text" name="name" placeholder="Name" required>
+				<input id="email" type="email" name="email" placeholder="Email" required>
+				<button onclick="submitForm()" class="submit-btn" type="submit">Sign Up</button>
 			</form>
 		</div>
 	</div>
@@ -283,6 +282,15 @@
 		function hideForm() {
 			formContainer.classList.remove('active');
 			formBox.classList.remove('active');
+		}
+		
+		// Fungsi untuk submit isi form ke text
+		function submitForm() {
+			let nama = document.getElementById("nama").value;
+			let email = document.getElementById("email").value;
+			let text = "https://wa.me/6285694857784?text="nama + "/" + email; 
+			// window.location.href = 'https://wa.me/6285694857784';
+			alert("Halo " + nama + ", email kamu adalah " + email);
 		}
 
 		// Event listener untuk tombol trigger
