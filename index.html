@@ -45,7 +45,7 @@
         text-align: center;
       }
       
-        .whatsapp-button {
+      .whatsapp-button {
         position: fixed;
         bottom: 30px;
         right: 30px;
@@ -211,6 +211,24 @@
     </ul>
     <button href="https://wa.me/6285694857784">Chat on WhatsApp</button>
   </div>
+  <button onclick="openForm()">Hubungi Kami</button>
+
+<div class="whatsapp-form" id="whatsapp-form">
+  <h2>Kirim Pesan</h2>
+  <form>
+    <label for="name">Nama</label>
+    <input type="text" id="name" placeholder="Masukkan nama Anda">
+
+    <label for="phone">Nomor Telepon</label>
+    <input type="tel" id="phone" placeholder="Masukkan nomor telepon Anda">
+
+    <label for="message">Pesan</label>
+    <textarea id="message" placeholder="Ketik pesan Anda"></textarea>
+
+    <button type="submit">Kirim</button>
+  </form>
+</div>
+  
 </div>
 
 <script>
@@ -218,6 +236,17 @@
   button.addEventListener("click", () => {
     alert("Thank you for contacting me!");
   });
+  
+  // FORM WA
+  function openForm() {
+    var form = document.getElementById("whatsapp-form");
+    form.classList.add("active");
+  }
+
+  function closeForm() {
+    var form = document.getElementById("whatsapp-form");
+    form.classList.remove("active");
+  }
 </script>
   </body>
 </html>
