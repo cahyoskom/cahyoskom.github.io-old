@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MProfile</title>
+    <title>Profile</title>
     <style>
       * {
         box-sizing: border-box;
@@ -236,7 +236,7 @@
   <body>
 
 <button class="trigger">Open Form</button>
-	<div id="popup-form" class="form-container">
+	<div class="form-container">
 		<div class="form-box">
 			<span class="close-btn">&times;</span>
 			<h2>Sign Up</h2>
@@ -255,20 +255,15 @@
 
 		// Fungsi untuk menampilkan pop-up form
 		function showForm() {
-			formContainer.style.display = "block";
-			formContainer.classList.replace('form-container', 'form-container.active');
+			//formContainer.style.display = "block";
 			formContainer.classList.add('active');
-			formBox.classList.replace('form-box', 'form-box.active');
 			formBox.classList.add('active');
 
 		}
 
 		// Fungsi untuk menyembunyikan pop-up form
 		function hideForm() {
-			formContainer.classList.replace('form-container.active', 'form-container');
-			formContainer.classList.add('active');
-			formBox.classList.replace('form-box.active', 'form-box');
-			formContainer.style.display  = "none";
+			//formContainer.style.display  = "none";
 			formContainer.classList.remove('active');
 			formBox.classList.remove('active');
 		}
