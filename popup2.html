@@ -235,7 +235,7 @@
   </head>
   <body>
 
-<button class="trigger">Open Form !!!</button>
+<button class="trigger">Open Form</button>
 	<div id="popup-form" class="form-container">
 		<div class="form-box">
 			<span class="close-btn">&times;</span>
@@ -255,9 +255,25 @@
 
 		// Fungsi untuk menampilkan pop-up form
 		function showForm() {
-			document.getElementById("popup-form").style.display = "block";
+			document.getElementById("popup-form").classList.add('active');
 			formContainer.classList.add('active');
 			formBox.classList.add('active');
+			
+			
+
+			// Menambahkan kelas baru ke elemen HTML
+			element.classList.add('newClass');
+
+			// Menghapus kelas yang ada dari elemen HTML
+			element.classList.remove('oldClass');
+
+			// Memeriksa apakah elemen HTML memiliki kelas tertentu
+			if (element.classList.contains('className')) {
+			// Lakukan sesuatu jika elemen HTML memiliki kelas tersebut
+			}
+
+			// Mengganti kelas yang ada dengan kelas baru
+			element.classList.replace('oldClass', 'newClass');
 		}
 
 		// Fungsi untuk menyembunyikan pop-up form
