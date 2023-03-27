@@ -257,9 +257,9 @@
 		function showForm() {
 			formContainer.style.display = "block";
 			formContainer.classList.replace('form-container', 'form-container.active');
-			//formContainer.classList.add('active');
+			formContainer.classList.add('active');
 			formBox.classList.replace('form-box', 'form-box.active');
-			//formBox.classList.add('active');
+			formBox.classList.add('active');
 
 		}
 
@@ -268,9 +268,9 @@
 			formContainer.classList.replace('form-container.active', 'form-container');
 			formContainer.classList.add('active');
 			formBox.classList.replace('form-box.active', 'form-box');
-			//formContainer.style.display  = "none";
-			//formContainer.classList.remove('active');
-			//formBox.classList.remove('active');
+			formContainer.style.display  = "none";
+			formContainer.classList.remove('active');
+			formBox.classList.remove('active');
 		}
 
 		// Event listener untuk tombol trigger
