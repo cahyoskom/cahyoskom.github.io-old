@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .profile-picture {
+        width: 250px;
+        height: 250px;
+        margin: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .profile-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-info {
+        margin: 20px;
+        text-align: center;
+      }
+      
+      
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+        text-shadow: 2px 2px #ddd;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #444;
+        text-shadow: 2px 2px #ddd;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #666;
+        text-shadow: 1px 1px #ddd;
+      }
+
+      ul {
+        list-style: none;
+        font-size: 1.2rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+        color: #666;
+        text-shadow: 1px 1px #ddd;
+      }
+
+      strong {
+        font-weight: bold;
+        color: #333;
+        text-shadow: 2px 2px #ddd;
+      }
+
+      button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      button:hover {
+        background-color: #2980b9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+		/* Style untuk tombol trigger */
+		.trigger {
+			display: block;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: #3498db;
+			color: #fff;
+			font-size: 20px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+		.trigger:hover {
+			background-color: #2980b9;
+		}
+
+		/* Style untuk pop-up form */
+		.form-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 999;
+			opacity: 0;
+			transition: opacity 0.2s ease-in-out;
+		}
+
+		.form-container.active {
+			opacity: 1;
+		}
+
+		.form-box {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			max-width: 500px;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 0.2s ease-in-out;
+		}
+
+		.form-box.active {
+			opacity: 1;
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 20px;
+			color: #333;
+			cursor: pointer;
+			transition: color 0.2s ease-in-out;
+		}
+
+		.close-btn:hover {
+			color: #999;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			display: block;
+			width: 100%;
+			margin: 10px auto;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			font-size: 18px;
+			background-color: #f5f5f5;
+			color: #333;
+			text-align: center;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+		input[type="text"]:hover,
+		input[type="email"]:hover,
+		input[type="password"]:hover {
+			background-color: #ddd;
+		}
+
+       .submit-btn {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #3498db;
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+		.submit-btn:hover {
+			background-color: #2980b9;
+		}
+
+		/* Animasi untuk pop-up form */
+		@keyframes slideIn {
+			from {
+				transform: translateY(-100%);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes slideOut {
+			from {
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(-100%);
+			}
+		}
+    </style>
+  </head>
+  <body>
+
+<button class="trigger">Open Form</button>
+	<div class="form-container">
+		<div class="form-box">
+			<span class="close-btn">&times;</span>
+			<h2>Sign Up</h2>
+			<form>
+				<input type="text" name="name" placeholder="Name" required>
+				<input type="email" name="email" placeholder="Email" required>
+				<button class="submit-btn" type="submit">Sign Up</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		const trigger = document.querySelector('.trigger');
+		const formContainer = document.querySelector('.form-container');
+		const formBox = document.querySelector('.form-box');
+		const closeBtn = document.querySelector('.close-btn');
+
+		// Fungsi untuk menampilkan pop-up form
+		function showForm() {
+			formContainer.classList.add('active');
+			formBox.classList.add('active');
+		}
+
+		// Fungsi untuk menyembunyikan pop-up form
+		function hideForm() {
+			formContainer.classList.remove('active');
+			formBox.classList.remove('active');
+		}
+
+		// Event listener untuk tombol trigger
+		trigger.addEventListener('click', showForm);
+
+		// Event listener untuk tombol close
+		closeBtn.addEventListener('click', hideForm);
+
+		// Event listener untuk mengklik area luar form
+		formContainer.addEventListener('click', (e) => {
+			if (e.target === formContainer) {
+				hideForm();
+			}
+		});
+	</script>
+
+  </body>
+</html>
