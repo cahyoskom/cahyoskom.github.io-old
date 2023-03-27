@@ -245,7 +245,8 @@
   const button = document.querySelector("button");
   button.addEventListener("click", () => {
     alert("Thank you for contacting me!");
-    openForm();
+    var form = document.getElementById("whatsapp-form");
+    form.classList.add("active");
     //window.location.href = 'https://wa.me/6285694857784';
   });
   
