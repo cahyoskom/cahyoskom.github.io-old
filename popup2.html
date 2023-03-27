@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MYProfile</title>
+    <title>Profile</title>
     <style>
       * {
         box-sizing: border-box;
@@ -255,17 +255,22 @@
 
 		// Fungsi untuk menampilkan pop-up form
 		function showForm() {
-			formContainer.style.display = "block";
-			formContainer.classList.add('active');
-			formBox.classList.add('active');
+			//formContainer.style.display = "block";
+			formContainer.classList.replace('form-container', 'form-container.active');
+			//formContainer.classList.add('active');
+			formBox.classList.replace('form-box', 'form-box.active');
+			//formBox.classList.add('active');
 
 		}
 
 		// Fungsi untuk menyembunyikan pop-up form
 		function hideForm() {
-			formContainer.style.display  = "none";
-			formContainer.classList.remove('active');
-			formBox.classList.remove('active');
+			formContainer.classList.replace('form-container.active', 'form-container');
+			formContainer.classList.add('active');
+			formBox.classList.replace('form-box.active', 'form-box');
+			//formContainer.style.display  = "none";
+			//formContainer.classList.remove('active');
+			//formBox.classList.remove('active');
 		}
 
 		// Event listener untuk tombol trigger
@@ -275,10 +280,10 @@
 		closeBtn.addEventListener('click', hideForm);
 
 		// Event listener untuk mengklik area luar form
-		formContainer.addEventListener('click', (e) => {
-			if (e.target === formContainer) {
-				hideForm();
-			}
+		//formContainer.addEventListener('click', (e) => {
+		//	if (e.target === formContainer) {
+		//		hideForm();
+		//	}
 		});
 	</script>
 
