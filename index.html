@@ -232,12 +232,8 @@
 </div>
 
 <script>
-  const button = document.querySelector("button");
-  button.addEventListener("click", () => {
-    alert("Thank you for contacting me!");
-  });
   
-  // FORM WA
+    // FORM WA
   function openForm() {
     var form = document.getElementById("whatsapp-form");
     form.classList.add("active");
@@ -247,6 +243,13 @@
     var form = document.getElementById("whatsapp-form");
     form.classList.remove("active");
   }
+  
+  const button = document.querySelector("button");
+  button.addEventListener("click", () => {
+    alert("Thank you for contacting me!");
+  });
+  
+  
 </script>
   </body>
 </html>
