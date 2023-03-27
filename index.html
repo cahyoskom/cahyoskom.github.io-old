@@ -193,6 +193,21 @@
     </style>
   </head>
   <body>
+    <div class="whatsapp-form" id="whatsapp-form">
+  <h2>Kirim Pesan</h2>
+  <form>
+    <label for="name">Nama</label>
+    <input type="text" id="name" placeholder="Masukkan nama Anda">
+
+    <label for="phone">Nomor Telepon</label>
+    <input type="tel" id="phone" placeholder="Masukkan nomor telepon Anda">
+
+    <label for="message">Pesan</label>
+    <textarea id="message" placeholder="Ketik pesan Anda"></textarea>
+
+    <button type="submit">Kirim</button>
+  </form>
+</div>
     <div class="container">
       <div class="profile-picture">
         <img src="profile-picture.jpg" alt="Profile Picture" />
@@ -211,25 +226,9 @@
     </ul>
     <button>Chat on WhatsApp</button>
   </div>
-  <button onclick="openForm()">Hubungi Kami</button>  
-</div>
-<div class="whatsapp-form" id="whatsapp-form">
-  <h2>Kirim Pesan</h2>
-  <form>
-    <label for="name">Nama</label>
-    <input type="text" id="name" placeholder="Masukkan nama Anda">
-
-    <label for="phone">Nomor Telepon</label>
-    <input type="tel" id="phone" placeholder="Masukkan nomor telepon Anda">
-
-    <label for="message">Pesan</label>
-    <textarea id="message" placeholder="Ketik pesan Anda"></textarea>
-
-    <button type="submit">Kirim</button>
-  </form>
 </div>
 
-<script>
+  <script>
   
     // FORM WA
   function openForm() {
@@ -247,10 +246,11 @@
     alert("UThank you for contacting me!");
     var form = document.getElementById("whatsapp-form");
     form.classList.add("active");
-    //window.location.href = 'https://wa.me/6285694857784';
+    //window.location.href = 'https://wa.me/6285694857784?text=Halo%20saya%20tertarik%20untuk%20membeli%20produk%20anda'
+;
   });
   
   
-</script>
+  </script>
   </body>
 </html>
