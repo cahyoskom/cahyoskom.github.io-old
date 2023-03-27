@@ -44,6 +44,97 @@
         margin: 20px;
         text-align: center;
       }
+      
+        .whatsapp-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #25d366;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-button:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .whatsapp-button i {
+        font-size: 2.5rem;
+        color: #fff;
+      }
+
+      .whatsapp-form {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 999;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        display: none;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-form.active {
+        transform: translateY(0);
+      }
+
+      .whatsapp-form h2 {
+        padding: 10px;
+        background-color: #25d366;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .whatsapp-form form {
+        padding: 10px;
+      }
+
+      .whatsapp-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+        color: #666;
+      }
+
+      .whatsapp-form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 1.2rem;
+      }
+
+      .whatsapp-form button {
+        background-color: #25d366;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .whatsapp-form button:hover {
+        background-color: #128c7e;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
 
       h1 {
         font-size: 3rem;
@@ -118,8 +209,7 @@
       <li><strong>Phone:</strong> +62 85694857784</li>
       <li><strong>Location:</strong> Depok Town, West Java </li>
     </ul>
-    <button>Contact Me</button>
-    <a aria-label="Chat on WhatsApp" href="https://wa.me/6285694857784"> <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.png" /> </a>
+    <button href="https://wa.me/6285694857784">Chat on WhatsApp</button>
   </div>
 </div>
 
