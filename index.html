@@ -216,17 +216,7 @@
     </style>
   </head>
   <body>
-  	<div class="form-container">
-		<div class="form-box">
-			<span class="close-btn">&times;</span>
-			<h2>Sign Up</h2>
-			<form action="https://wa.me/6285694857784">
-				<input id="name" type="text" name="name" placeholder="Name" required>
-				<input id="email" type="email" name="email" placeholder="Email" required>
-				<button class="submit-btn" type="submit">Sign Up</button>
-			</form>
-		</div>
-	</div>
+
     <div class="container">
       <div class="profile-picture">
         <img src="profile-picture.jpg" alt="Profile Picture" />
@@ -254,35 +244,16 @@
 		const formBox = document.querySelector('.form-box');
 		const closeBtn = document.querySelector('.close-btn');
 
-		// Fungsi untuk menampilkan pop-up form
+		// Fungsi untuk button
 		function showForm() {
-			formContainer.classList.add('active');
-			formBox.classList.add('active');
+		window.location.href = "https://wa.me/6285694857784?text=I'm%20interested%20in%20your%20skill";
 		}
 
-		// Fungsi untuk menyembunyikan pop-up form
-		function hideForm() {
-			formContainer.classList.remove('active');
-			formBox.classList.remove('active');
-		}
-		
-		// Fungsi untuk submit isi form ke text
-		
 		
 		// Event listener untuk tombol trigger
 		trigger.addEventListener('click', showForm);
 
-		// Event listener untuk tombol close
-		closeBtn.addEventListener('click', hideForm);
-
-		// Event listener untuk mengklik area luar form
-		formContainer.addEventListener('click', (e) => {
-			if (e.target === formContainer) {
-				hideForm();
-			}
-		});
-
-        //window.location.href = 'https://wa.me/6285694857784';
+		
 	</script>
 
   </body>
