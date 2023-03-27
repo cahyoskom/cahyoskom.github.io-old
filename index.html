@@ -211,8 +211,8 @@
     </ul>
     <button>Chat on WhatsApp</button>
   </div>
-  <button onclick="openForm()">Hubungi Kami</button>
-
+  <button onclick="openForm()">Hubungi Kami</button>  
+</div>
 <div class="whatsapp-form" id="whatsapp-form">
   <h2>Kirim Pesan</h2>
   <form>
@@ -227,8 +227,6 @@
 
     <button type="submit">Kirim</button>
   </form>
-</div>
-  
 </div>
 
 <script>
@@ -246,8 +244,9 @@
   
   const button = document.querySelector("button");
   button.addEventListener("click", () => {
-    alert("Update Thank you for contacting me!");
-    window.location.href = 'https://wa.me/6285694857784';
+    alert("Thank you for contacting me!");
+    openForm();
+    //window.location.href = 'https://wa.me/6285694857784';
   });
   
   
